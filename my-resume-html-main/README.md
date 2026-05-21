@@ -67,6 +67,7 @@ my-resume-html-main/
 - Email: dobariyavraj937@gmail.com
 - LinkedIn: https://www.linkedin.com/in/vraj-dobariya-4a78ab250/
 - GitHub: https://github.com/VrajDobariya82
+ - Live: https://vrajdobariyaresume.vercel.app/
 
 ---
 
