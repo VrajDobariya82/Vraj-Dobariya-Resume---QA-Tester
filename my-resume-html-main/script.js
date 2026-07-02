@@ -1,25 +1,28 @@
-const downloadButton = document.getElementById("download-pdf");
-
-if (downloadButton) {
-  downloadButton.addEventListener("click", () => {
+document.getElementById("download-pdf").addEventListener("click", () => {
+    const button = document.getElementById("download-pdf");
     const element = document.querySelector(".container");
 
-    if (!element || typeof html2pdf === "undefined") {
-      return;
-    }
+    // Hide button
+    button.style.display = "none";
 
     const opt = {
-      margin: 0.4,
-      filename: "Vraj_Dobariya_QA_Tester_Resume.pdf",
-      image: { type: "jpeg", quality: 1 },
-      html2canvas: { scale: 3, logging: true, scrollY: 0 },
-      jsPDF: {
-        unit: "in",
-        format: [8.5, 11],
-        orientation: "portrait"
-      }
+        margin: 0.5,
+        filename: "Vraj_Dobariya_Resume.pdf",
+        image: { type: "jpeg", quality: 1 },
+        html2canvas: { scale: 2 },
+        jsPDF: {
+            unit: "in",
+            format: "a4",
+            orientation: "portrait"
+        }
     };
 
-    html2pdf().set(opt).from(element).save();
-  });
-}
+    html2pdf()
+        .set(opt)
+        .from(element)
+        .save()
+        .then(() => {
+            // Show button again
+            button.style.display = "block";
+        });
+});
